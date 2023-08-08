@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "178245391290",
+    "project_id": "bwa-hotelio-f1e47",
+    "storage_bucket": "bwa-hotelio-f1e47.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:178245391290:android:97c4e4a2de0420da700383",
+        "android_client_info": {
+          "package_name": "com.rifara.hotelio"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "178245391290-l0hk40l57i6o2buf8j3p1n1gv5gndq4n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9vAyOcT35o0rbKAPl3yujpOM0Fb32Dtg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "178245391290-l0hk40l57i6o2buf8j3p1n1gv5gndq4n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
