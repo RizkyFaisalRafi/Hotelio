@@ -1,20 +1,4 @@
 class Booking {
-  String id;
-  String idHotel;
-  String cover;
-  List<String> name;
-  String location;
-  String date;
-  int guest;
-  String breakfast;
-  String checkInTime;
-  int night;
-  int serviceFee;
-  int activities;
-  int totalPayment;
-  String status;
-  bool isDone;
-
   Booking({
     required this.id,
     required this.idHotel,
@@ -33,11 +17,27 @@ class Booking {
     required this.isDone,
   });
 
+  String id;
+  String idHotel;
+  String cover;
+  String name;
+  String location;
+  String date;
+  int guest;
+  String breakfast;
+  String checkInTime;
+  int night;
+  int serviceFee;
+  int activities;
+  int totalPayment;
+  String status;
+  bool isDone;
+
   factory Booking.fromJson(Map<String, dynamic> json) => Booking(
         id: json["id"],
         idHotel: json["id_hotel"],
         cover: json["cover"],
-        name: List<String>.from(json["name"].map((x) => x)),
+        name: json["name"],
         location: json["location"],
         date: json["date"],
         guest: json["guest"],
@@ -55,7 +55,7 @@ class Booking {
         "id": id,
         "id_hotel": idHotel,
         "cover": cover,
-        "name": List<dynamic>.from(name.map((x) => x)),
+        "name": name,
         "location": location,
         "date": date,
         "guest": guest,
@@ -69,3 +69,21 @@ class Booking {
         "is_done": isDone,
       };
 }
+
+Booking get initBooking => Booking(
+      id: '',
+      idHotel: '',
+      cover: '',
+      name: '',
+      location: '',
+      date: '',
+      guest: 0,
+      breakfast: '',
+      checkInTime: '',
+      night: 0,
+      serviceFee: 0,
+      activities: 0,
+      totalPayment: 0,
+      status: '',
+      isDone: false,
+    );

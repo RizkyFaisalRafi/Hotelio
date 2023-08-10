@@ -18,6 +18,7 @@ class CNearby extends GetxController {
       ];
 
   final _listHotel = <Hotel>[].obs;
+  // ignore: invalid_use_of_protected_member
   List<Hotel> get listHotel => _listHotel.value;
 
   getListHotel() async {
