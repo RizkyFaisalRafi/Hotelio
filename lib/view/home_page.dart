@@ -5,6 +5,7 @@ import 'package:hotelio/config/app_colors.dart';
 import 'package:hotelio/controller/c_home.dart';
 import 'package:hotelio/view/history_page.dart';
 import 'package:hotelio/view/nearby_page.dart';
+import 'package:hotelio/widget/coming_soon.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -20,10 +21,13 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Obx(() {
+        if (cHome.indexPage == 0) {
+          return NearbyPage();
+        }
         if (cHome.indexPage == 1) {
           return const HistoryPage();
         }
-        return NearbyPage();
+        return const ComingSoon();
       }),
       bottomNavigationBar: Obx(() {
         return Material(
