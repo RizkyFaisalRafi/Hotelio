@@ -1,5 +1,5 @@
 # hotelio
-Aplikasi Pencarian Hotel/Booking Hotel
+Aplikasi Pencarian Hotel/Booking Hotel dengan State Management Get X dan Firebase
 
 
 ## :iphone: UI
