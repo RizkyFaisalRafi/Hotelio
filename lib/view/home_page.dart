@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:hotelio/config/app_assets.dart';
 import 'package:hotelio/config/app_colors.dart';
 import 'package:hotelio/controller/c_home.dart';
+import 'package:hotelio/view/history_page.dart';
 import 'package:hotelio/view/nearby_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -20,7 +21,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       body: Obx(() {
         if (cHome.indexPage == 1) {
-          return const Center(child: Text('History'));
+          return const HistoryPage();
         }
         return NearbyPage();
       }),

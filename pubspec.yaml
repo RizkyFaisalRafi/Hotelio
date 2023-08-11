@@ -45,6 +45,7 @@ dependencies:
   cloud_firestore: ^4.8.4
   d_info: ^0.2.0
   flutter_rating_bar: ^4.0.1
+  grouped_list: ^5.1.2
 
 dev_dependencies:
   flutter_test:
