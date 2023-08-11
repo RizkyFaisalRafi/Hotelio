@@ -8,6 +8,7 @@ import 'package:hotelio/config/session.dart';
 import 'package:hotelio/model/user.dart';
 import 'package:hotelio/view/checkout_page.dart';
 import 'package:hotelio/view/checkout_success_page.dart';
+import 'package:hotelio/view/detail_booking_page.dart';
 import 'package:hotelio/view/detail_page.dart';
 import 'package:hotelio/view/home_page.dart';
 import 'package:hotelio/view/intro_page.dart';
@@ -58,7 +59,7 @@ class MyApp extends StatelessWidget {
         AppRoute.detail: (context) => DetailPage(),
         AppRoute.checkout: (context) => CheckoutPage(),
         AppRoute.checkoutSuccess: (context) => const CheckoutSuccessPage(),
-        AppRoute.detailBooking: (context) => HomePage(),
+        AppRoute.detailBooking: (context) => const DetailBookingPage(),
       },
     );
   }

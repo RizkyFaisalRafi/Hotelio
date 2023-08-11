@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:grouped_list/grouped_list.dart';
 import 'package:hotelio/config/app_assets.dart';
 import 'package:hotelio/config/app_colors.dart';
+import 'package:hotelio/config/session.dart';
 import 'package:hotelio/controller/c_users.dart';
 import 'package:intl/intl.dart';
 
@@ -67,6 +68,11 @@ class _HistoryPageState extends State<HistoryPage> {
                       AppRoute.detailBooking,
                       arguments: element,
                     );
+                    // Navigator.pushNamed(
+                    //   context,
+                    //   AppRoute.detailBooking,
+                    //   arguments: bookedData,
+                    // );
                   },
                   child: item(context, element),
                 ),
@@ -122,7 +128,8 @@ class _HistoryPageState extends State<HistoryPage> {
           const SizedBox(width: 16),
           Container(
             decoration: BoxDecoration(
-              color: booking.status == 'PAID' ? AppColors.secondary : Colors.red,
+              color:
+                  booking.status == 'PAID' ? AppColors.secondary : Colors.red,
               borderRadius: BorderRadius.circular(30),
             ),
             padding: const EdgeInsets.symmetric(
@@ -145,13 +152,32 @@ class _HistoryPageState extends State<HistoryPage> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.circular(50),
-            child: Image.asset(
-              AppAssets.profile,
-              width: 50,
-              height: 50,
-              fit: BoxFit.cover,
+          GestureDetector(
+            onTap: () {
+              showMenu(
+                context: context,
+                position: const RelativeRect.fromLTRB(16, 16, 0, 0),
+                items: [
+                  const PopupMenuItem(
+                    value: 'logout',
+                    child: Text('Logout'),
+                  ),
+                ],
+              ).then((value) {
+                if (value == 'logout') {
+                  Session.clearUser();
+                  Navigator.pushReplacementNamed(context, AppRoute.signIn);
+                }
+              });
+            },
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(50),
+              child: Image.asset(
+                AppAssets.profile,
+                width: 50,
+                height: 50,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           Column(

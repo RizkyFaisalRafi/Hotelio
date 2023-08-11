@@ -64,7 +64,7 @@ class DetailPage extends StatelessWidget {
         if (bookedData.id == '') {
           return bookingNow(hotel, context);
         } else {
-          return viewReceipt();
+          return viewReceipt(context);
         }
       }),
       body: Container(
@@ -118,7 +118,7 @@ class DetailPage extends StatelessWidget {
     );
   }
 
-  Container viewReceipt() {
+  Container viewReceipt(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
@@ -141,7 +141,13 @@ class DetailPage extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
             color: AppColors.secondary,
             child: InkWell(
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(
+                  context,
+                  AppRoute.detailBooking,
+                  arguments: bookedData,
+                );
+              },
               borderRadius: BorderRadius.circular(20),
               child: const Padding(
                 padding: EdgeInsets.symmetric(
