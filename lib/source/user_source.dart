@@ -36,7 +36,7 @@ class UserSource {
 
   static Future<User> getWhereId(String id) async {
     DocumentReference<Map<String, dynamic>> ref =
-        FirebaseFirestore.instance.collection('user').doc(id);
+        FirebaseFirestore.instance.collection('User').doc(id);
     DocumentSnapshot<Map<String, dynamic>> doc = await ref.get();
 
     // return User.fromJson(doc.data()!);
